@@ -28,10 +28,10 @@ int main(int argc, char** argv) {
 	cin >> player2;
 	cout << endl;
 
-	/*if (strcmp(player1,player2)) {
-		cout << "This name is already being used, change it: " << endl;
+	if (strcmp(player1,player2) == 0) {
+		cout << "\tThis name is already being used, change it: " << endl;
 		cin >> player2;
-	}*/
+	}
 
 	Sleep(1200);
 
