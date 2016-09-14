@@ -7,8 +7,9 @@ using namespace std;
 
 
 int main(int argc, char** argv) {
-	char player1[30] = "\0";
-	char player2[30] = "\0";
+	
+	char* player_1 = new char[30];
+	char* player_2 = new char[30];
 	int life_1 = 100;
 	int life_2 = 100;
 	int attack_1;
@@ -21,16 +22,16 @@ int main(int argc, char** argv) {
 	cout << "\t-------------------------" << endl;
 
 	cout << "\tEnter name player 1: ";
-	cin >> player1;
+	cin >> player_1;
 	cout << endl;
 
 	cout << "\tEnter name player 2: ";
-	cin >> player2;
+	cin >> player_2;
 	cout << endl;
 
-	if (strcmp(player1,player2) == 0) {
+	if (strcmp(player_1,player_2) == 0) {
 		cout << "\tThis name is already being used, change it: " << endl;
-		cin >> player2;
+		cin >> player_2;
 	}
 
 	Sleep(1200);
@@ -49,23 +50,23 @@ int main(int argc, char** argv) {
 		    life_1 = life_1 - attack_2;
 
 		if(life_1 >= 0)
-			cout << "\tThis is the life of " << player1 << ": " << life_1 << endl;
+			cout << "\tThis is the life of " << player_1 << ": " << ++life_1 << endl;
 		else
-			cout << "\tThis is the life of " << player1 << ": 0" << endl;
+			cout << "\tThis is the life of " << player_1 << ": 0" << endl;
 
 		if(life_2 >= 0 )
-			cout << "\tThis is the life of " << player2 << ": " << life_2 << endl << endl;
+			cout << "\tThis is the life of " << player_2 << ": " << ++life_2 << endl << endl;
 		else
-			cout << "\tThis is the life of " << player2 << ": 0" << endl << endl;
+			cout << "\tThis is the life of " << player_2 << ": 0" << endl << endl;
 		turn++;
 		Sleep(1200);
 	}
 
 	if (life_1 <= 0)
-		cout << "\t" << player2 << " is the winner!! I am sorry " << player1 << " :(" << endl << endl;
+		cout << "\t" << player_2 << " is the winner!! I am sorry " << player_1 << " :(" << endl << endl;
 
 	if (life_2 <= 0)
-		cout << "\t" << player1 << " is the winner!! I am sorry "  << player2 << " :(" << endl << endl;
+		cout << "\t" << player_1 << " is the winner!! I am sorry "  << player_2 << " :(" << endl << endl;
 
 	cout << "\t";
 	system("pause");
